@@ -6,6 +6,7 @@ const AvailabilitySlot = require("./availabilitySlotModel");
 const Appointment = require("./appointmentModel")
 const Prescription = require("./prescriptionModel")
 const Notification = require("./notificationModel")
+const ApplicationSettings = require("./applicationSettingsModel")
 User.hasOne(DoctorProfile, {
   foreignKey: "user_id",
   as: "doctorProfile",
@@ -97,4 +98,13 @@ Notification.belongsTo(Appointment, {
   foreignKey: "appointment_id",
   as: "appointment",
 });
-module.exports = { User, DoctorProfile, DoctorCertificate,AvailabilitySlot,Appointment,Prescription, Notification };
+module.exports = {
+  User,
+  DoctorProfile,
+  DoctorCertificate,
+  AvailabilitySlot,
+  Appointment,
+  Prescription,
+  Notification,
+  ApplicationSettings,
+};

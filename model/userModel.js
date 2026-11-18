@@ -43,6 +43,24 @@ const userSchema = sequelize.define("users", {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
     },
+    admin_fee:{
+        type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    notifications_cleared_at: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    resetPasswordToken: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+      field: "reset_password_token",
+    },
+    resetPasswordExpires: {
+      type: DataTypes.DATE,
+      allowNull: true,
+      field: "reset_password_expires",
+    },
   },
   {
     tableName: "users",

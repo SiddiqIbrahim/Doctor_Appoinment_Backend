@@ -50,6 +50,12 @@ const Appointment = sequelize.define(
       allowNull: false,
     },
 
+    admin_fee: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0,
+    },
+
     status: {
       type: DataTypes.ENUM(
         "confirmed",
@@ -59,6 +65,12 @@ const Appointment = sequelize.define(
       ),
       allowNull: false,
       defaultValue: "confirmed",
+    },
+
+    idempotency_key: {
+      type: DataTypes.STRING(120),
+      allowNull: true,
+      unique: true,
     },
   },
   {
